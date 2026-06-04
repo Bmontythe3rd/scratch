@@ -27,21 +27,14 @@ terminal:
 
 ## Install
 
-Scratch requires **Python 3.9+**.
+Scratch requires **Python 3.9+**. See [`INSTALL.md`](INSTALL.md) for full instructions covering uv, pipx, and pip+venv.
 
+**Quick start (uv):**
 ```bash
-# Clone the repo
 git clone https://github.com/Bmontythe3rd/scratch.git
 cd scratch
-
-# Install (editable, so you can hack on it)
-pip install -e .
+uv tool install .
 ```
-
-That installs a `scratch` command on your PATH.
-
-> **Tip:** prefer an isolated install? Use [pipx](https://pipx.pypa.io/):
-> `pipx install .`
 
 ## Usage
 

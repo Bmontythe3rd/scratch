@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scratch-editor"
+version = "0.1.0"
+description = "A dead-simple terminal text editor — as easy as a note in Notepad++."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Bryan" }]
+keywords = ["terminal", "editor", "tui", "textual", "notepad"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Editors",
+]
+dependencies = [
+    # Textual ships the TextArea widget + syntax highlighting.
+    # The [syntax] extra pulls in tree-sitter language parsers.
+    "textual[syntax]>=0.58.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[project.scripts]
+scratch = "scratch_editor.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Bmontythe3rd/scratch"
+Issues = "https://github.com/Bmontythe3rd/scratch/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
